@@ -12,7 +12,15 @@ export default function Comments(){
         }).sort((a,b)=>new Date(a.createdAt).getTime()-new Date(b.createdAt).getTime());    
     
     const addComment = (text,parentId) => {
-
+        let dummyComment={
+            id: Math.random().toString(36).substring(2,9),
+            body: text,
+            username: "RedBaron",
+            userId: "1",
+            parentId: parentId,
+            createdAt: new Date().toISOString(),
+        };
+        setAllComments([...allComments,dummyComment])
     }    
     const rootComments=allComments.filter( comment => {
         return comment.parentId==null;
@@ -28,7 +36,9 @@ export default function Comments(){
     return(
         <div className="comments">
             <h1 className="comment-title">Comments</h1>
-            
+            <div className="comment-form">
+                <CommentForm handleSubmit={addComment} submitLabel="Write"/>
+            </div>
             <div className="comment-container">
             {
                 rootComments.map(comment=>(
