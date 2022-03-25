@@ -1,0 +1,31 @@
+.comment-image-container {
+    float: left;
+}
+
+.comment-replies {
+    margin-left: 40px;
+}
+
+.comment-right-part {
+    float: left;
+    margin-left: 20px;
+}
+
+.comment {
+    display: block !important;
+    margin-top: 20px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.comment-action {
+    float: left;
+    font-size: 10px;
+    color: darkgrey;
+    margin-left: 20px;
+}
+
+.comment-action:hover {
+    color: rgb(80, 80, 80);
+    cursor: pointer;
+}
